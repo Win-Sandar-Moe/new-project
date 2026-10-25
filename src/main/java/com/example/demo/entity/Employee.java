@@ -1,9 +1,6 @@
 package com.example.demo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,7 +9,6 @@ import lombok.Setter;
 @Setter
 @Getter
 @NoArgsConstructor
-
 public class Employee {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -20,5 +16,8 @@ public class Employee {
     private String name;
     private int age;
     private String email;
+    @ManyToOne
+    private Department department;
+
 
 }
